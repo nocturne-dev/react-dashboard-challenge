@@ -1,0 +1,11 @@
+@use "../../../styles" as s;
+
+.container {
+    padding: 0 s.rem(25);
+    max-width: s.rem(1110);
+    margin: 0 auto s.rem(46);
+
+    @include s.breakpoint-up(large) {
+        padding: 0;
+    }
+}

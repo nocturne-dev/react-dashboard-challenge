@@ -1,0 +1,144 @@
+@use "../../../styles" as s;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--default-card-bg);
+  color: var(--default-text1);
+  text-align: center;
+  border-radius: s.rem(5);
+  padding: s.rem(25);
+  transition: background 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--default-card-hover);
+  }
+
+  &--facebook {
+    border-top: s.rem(5) solid var(--facebook);
+  }
+
+  &--twitter {
+    border-top: s.rem(5) solid var(--twitter);
+  }
+
+  &--instagram {
+    padding-top: s.rem(30);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: s.rem(5);
+      background: linear-gradient(
+        255deg,
+        var(--instagram-end),
+        var(--instagram-middle) 50.91%,
+        var(--instagram-start) 100%
+      );
+    }
+  }
+
+  &--youtube {
+    border-top: s.rem(5) solid var(--youtube);
+  }
+
+  &__platform {
+    display: flex;
+    height: s.rem(20);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: s.rem(28);
+    margin-top: s.rem(5);
+  }
+
+  &__subtitle {
+    font-size: s.rem(14);
+    font-weight: 700;
+    color: var(--default-text1);
+  }
+
+  &__icon {
+    margin-right: s.rem(8);
+  }
+
+  &__username {
+    font-size: s.rem(12);
+    font-weight: 700;
+    color: var(--default-text1);
+  }
+
+  &__followers {
+    margin-bottom: s.rem(25);
+  }
+
+  &__count {
+    color: var(--default-text2);
+    font-weight: 700;
+    letter-spacing: s.rem(-2);
+    line-height: 1;
+    margin-bottom: s.rem(4);
+
+    &--big {
+      font-size: s.rem(56);
+    }
+
+    &--small {
+      font-size: s.rem(32);
+    }
+  }
+
+  &__label {
+    font-size: s.rem(12);
+    letter-spacing: s.rem(5);
+    font-weight: 400;
+    color: var(--default-text1);
+    text-transform: uppercase;
+  }
+
+  &__change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: s.rem(12);
+    font-weight: 700;
+
+    &--up {
+      color: var(--lime-green);
+    }
+
+    &--down {
+      color: var(--bright-red);
+    }
+
+    img {
+      margin-right: s.rem(4);
+    }
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-items: start;
+    gap: s.rem(23);
+
+    .card__count {
+      margin-bottom: 0;
+    }
+
+    .card__count,
+    .card__change {
+      align-self: end;
+    }
+
+    img,
+    .card__change {
+      justify-self: end;
+    }
+  }
+}

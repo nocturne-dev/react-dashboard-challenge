@@ -1,0 +1,15 @@
+@use "../../../styles" as s;
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: s.rem(30);
+
+  @include s.breakpoint-up(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include s.breakpoint-up(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

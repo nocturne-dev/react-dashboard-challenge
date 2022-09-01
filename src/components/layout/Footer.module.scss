@@ -1,0 +1,10 @@
+@use "../../styles" as s;
+
+.footer {
+  font-size: s.rem(11);
+  text-align: center;
+
+  a {
+    color: var(--challenge-color);
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../styles" as s;
+
+.header {
+  margin-top: s.rem(36) !important;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include s.breakpoint-up(medium) {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    width: 100%;
+
+    @include s.breakpoint-up(medium) {
+      width: auto;
+    }
+  }
+
+  &__subtitle {
+    font-size: s.rem(14);
+    font-weight: 700;
+    color: var(--default-text1);
+  }
+}

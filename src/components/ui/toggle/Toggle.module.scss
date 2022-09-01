@@ -1,0 +1,67 @@
+@use "../../../styles" as s;
+// https://codepen.io/SaraSoueidan/pen/jpBbrq/?editors=1100
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr s.rem(48);
+  border: none;
+  margin: 0;
+
+  label {
+    font-size: s.rem(14);
+    font-weight: 700;
+    color: var(--default-toggle);
+
+    &[for="dark"] {
+      line-height: s.rem(24);
+      margin-right: s.rem(13);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    height: s.rem(24);
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    margin: 0 s.rem(-2);
+    width: s.rem(24);
+    height: s.rem(24);
+
+    &:focus ~ .toggle__button {
+      border: s.rem(2) solid white;
+    }
+  }
+
+  &__background {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: s.rem(12);
+    background: var(--default-toggle-bg);
+    pointer-events: none;
+  }
+
+  &__button {
+    position: absolute;
+    top: s.rem(3);
+    width: s.rem(18);
+    height: s.rem(18);
+    border-radius: 50%;
+    background-color: var(--default-toggle-button);
+    transition: all 150ms ease-in-out;
+
+    &--dark {
+      left: s.rem(3);
+      right: 100%;
+    }
+
+    &--light {
+      left: calc(100% - 21px);
+      right: 3px;
+    }
+  }
+}
